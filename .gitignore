@@ -1,0 +1,5 @@
+# Ignore all logs
+*.log
+
+# Ignore compiled webroot folder
+WebRoot/
