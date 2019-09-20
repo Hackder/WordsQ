@@ -1,0 +1,29 @@
+$primary-color: black;
+$background-color: white;
+
+// Font sizes
+$fontsize-smallest: 12;
+$fontsize-small: 14;
+$fontsize-regular: 16;
+$fontsize-big: 18;
+$fontsize-huge: 50;
+
+// Colors
+$color-theme: #3C7A89;
+$color-error: #b3001b;
+$color-success: #8ac926;
+$color-text: black;
+
+// QuickSand
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700&display=swap&subset=latin-ext');
+
+html {
+    font-family: 'QuickSand', 'sans-serif';
+    font-size: $fontsize-regular;
+    color: $color-text;
+}
+
+h1 {
+    font-size: $fontsize-huge;
+    color: $color-theme;
+}

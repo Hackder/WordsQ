@@ -1,4 +1,15 @@
-html
-{
-    
+
+@import "base";
+
+body {
+    color: $primary-color;
+    background-color: $background-color;
+    padding: 50, 50, 50, 50;
+    width: 100%;
+    height: 100%;
+}
+
+.header-text {
+    position: relative;
+    margin: 50, 20, 50, 20;
 }
