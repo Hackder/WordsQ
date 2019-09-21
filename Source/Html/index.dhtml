@@ -1,6 +1,6 @@
 <!--@ include header @-->
 
-<center>
+<center class="main-container">
     <!-- Header text -->
     <h1>WordsQ</h1>
 
@@ -33,17 +33,79 @@
     </div>
     <div class="inner-container">
         <div class="secondary-header">Range</div>
-        <div class="linear-container">
+        <div>
             <input id="txtFrom" type="number" min="1" max="240" placeholder="From"/>
             <input id="txtTo" type="number" min="1" max="240" placeholder="To"/>
         </div>
     </div>
     <div class="inner-container">
         <div class="secondary-header">Type</div>
-        <div class="linear-container">
+        <div>
             <select>
-                <option value="test">Select from 3</option>
+                <option value="write">Write the word</option>
+                <option value="from3words">Select from 3 words</option>
+                <option value="from3modified">Select from 3 similar</option>
             </select>
+        </div>
+    </div>
+    <!-- The quiz -->
+    <div class="highlite-container">
+        <div class="inner-container">
+            <div class="secondary-info">1/10</div>
+
+            <!-- Prefixes -->
+            <div class="inner-container">
+
+                <label class="radio-container">
+                    <input type="radio" name="prefix" checked="checked">
+                    <div class="radio-checkmark">
+                        <span>Der</span>
+                    </div>
+                </label>
+                
+                <label class="radio-container">
+                    <input type="radio" name="prefix">
+                    <div class="radio-checkmark">
+                        <span >Die</span>
+                    </div>
+                </label>
+                
+                <label class="radio-container">
+                    <input type="radio" name="prefix">
+                    <div class="radio-checkmark">
+                        <span >Das</span>
+                    </div>
+                </label>
+                
+                <label class="radio-container">
+                    <input type="radio" name="prefix">
+                    <div class="radio-checkmark">
+                        <span>None</span>
+                    </div>
+                </label>
+
+            </div>
+
+            <!-- Manual word input -->
+            <div class="inner-container">
+                <input id="inputText" type="text" placeholder="Word" />
+            </div>
+            <!-- One of three -->
+            <div class="inner-container">
+                <form class="form">
+                    <div class="inputGroup">
+                        <input id="radio1" name="radio" type="radio"/>
+                        <label for="radio1">Yes</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input id="radio2" name="radio" type="radio"/>
+                        <label for="radio2">No</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="inner-container">
+            <input class="submit-button" type="button" value="Check"/>
         </div>
     </div>
 </center>
