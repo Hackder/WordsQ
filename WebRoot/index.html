@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WordsQ</title>
+        <link href="/Assets/Css/style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+
+<center class="main-container">
+    <!-- Header text -->
+    <h1>WordsQ</h1>
+
+    <div class="inner-container">
+        <label class="container">Lection 1
+            <input type="checkbox" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 2
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 3
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 4
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 5
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 6
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <div class="secondary-info">(<span id="selected-words-total">240</span> words)</div>
+    </div>
+    <div class="inner-container">
+        <div class="secondary-header">Range</div>
+        <div>
+            <input id="txtFrom" type="number" min="1" max="240" placeholder="From"/>
+            <input id="txtTo" type="number" min="1" max="240" placeholder="To"/>
+        </div>
+    </div>
+    <div class="inner-container">
+        <div class="secondary-header">Type</div>
+        <div>
+            <select>
+                <option value="write">Write the word</option>
+                <option value="from3words">Select from 3 words</option>
+                <option value="from3modified">Select from 3 similar</option>
+            </select>
+        </div>
+    </div>
+    <!-- The quiz -->
+    <div class="highlite-container">
+        <div class="inner-container">
+            <div class="secondary-info">1/10</div>
+
+            <!-- Prefixes -->
+            <div class="inner-container">
+
+                <label class="radio-container">
+                    <input type="radio" name="prefix" checked="checked">
+                    <div class="radio-checkmark">
+                        <span>Der</span>
+                    </div>
+                </label>
+                
+                <label class="radio-container">
+                    <input type="radio" name="prefix">
+                    <div class="radio-checkmark">
+                        <span >Die</span>
+                    </div>
+                </label>
+                
+                <label class="radio-container">
+                    <input type="radio" name="prefix">
+                    <div class="radio-checkmark">
+                        <span >Das</span>
+                    </div>
+                </label>
+                
+                <label class="radio-container">
+                    <input type="radio" name="prefix">
+                    <div class="radio-checkmark">
+                        <span>None</span>
+                    </div>
+                </label>
+
+            </div>
+
+            <!-- Manual word input -->
+            <div class="inner-container">
+                <input class="" id="inputText" type="text" placeholder="Word" />
+                <div id="wrong-word-txt" class="wrong-word">Krankenvagen</div>
+            </div>
+            <!-- One of three -->
+            <div class="inner-container hidden">
+                <label id="word1" class="word-selection">
+                    <input type="radio" name="wordChoice" />
+                    <div class="radio-body">Krankenhause</div>
+                </label>
+                <label id="word2" class="word-selection">
+                    <input type="radio" name="wordChoice" />
+                    <div class="radio-body">Krankenvagen</div>
+                </label>
+                <label id="word3" class="word-selection">
+                    <input type="radio" name="wordChoice" />
+                    <div class="radio-body">Housespiele</div>
+                </label>
+            </div>
+        </div>
+        <div class="inner-container">
+            <input class="submit-button" type="button" value="Check"/>
+        </div>
+    </div>
+</center>
+
+    <footer>
+        <center>
+            <div>Copyright Hackder 2019</div>
+        </center>
+    </footer>
+
+    </body>
+</html>
