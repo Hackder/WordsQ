@@ -28,10 +28,11 @@
         }
     }
 
-    /* On mouse-over, add a grey background color */
-    &:hover input ~ .radio-checkmark {
-        background-color: $color-highlite-darker;
-    }
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        &:hover input ~ .radio-checkmark {
+            background-color: $color-highlite-darker;
+        }
+    }    
 }
   
 /* Create a custom radio button */
@@ -42,7 +43,6 @@
     width: 100%;
     background-color: $background-color;
     border-radius: 4px;
-    border: 1px, solid $color-theme;
 
     span {
         padding: 15px;

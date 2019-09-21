@@ -88,20 +88,23 @@
 
             <!-- Manual word input -->
             <div class="inner-container">
-                <input id="inputText" type="text" placeholder="Word" />
+                <input class="" id="inputText" type="text" placeholder="Word" />
+                <div id="wrong-word-txt" class="wrong-word">Krankenvagen</div>
             </div>
             <!-- One of three -->
-            <div class="inner-container">
-                <form class="form">
-                    <div class="inputGroup">
-                        <input id="radio1" name="radio" type="radio"/>
-                        <label for="radio1">Yes</label>
-                    </div>
-                    <div class="inputGroup">
-                        <input id="radio2" name="radio" type="radio"/>
-                        <label for="radio2">No</label>
-                    </div>
-                </form>
+            <div class="inner-container hidden">
+                <label id="word1" class="word-selection">
+                    <input type="radio" name="wordChoice" />
+                    <div class="radio-body">Krankenhause</div>
+                </label>
+                <label id="word2" class="word-selection">
+                    <input type="radio" name="wordChoice" />
+                    <div class="radio-body">Krankenvagen</div>
+                </label>
+                <label id="word3" class="word-selection">
+                    <input type="radio" name="wordChoice" />
+                    <div class="radio-body">Housespiele</div>
+                </label>
             </div>
         </div>
         <div class="inner-container">

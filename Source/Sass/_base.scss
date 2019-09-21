@@ -8,8 +8,8 @@ $fontsize-huge: 28pt;
 
 // Colors
 $color-theme: #3C7A89;
-$color-error: #b3001b;
-$color-success: #8ac926;
+$color-error: #c3021f;
+$color-success: #74a820;
 $color-text: black;
 $color-text-secondary: #666;
 $color-text-thridary: #A2A2A2;
@@ -26,10 +26,10 @@ html, body {
     font-family: 'QuickSand', 'sans-serif';
     font-size: $fontsize-regular;
     color: $color-text;
-}
-
-html {
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 h1 {

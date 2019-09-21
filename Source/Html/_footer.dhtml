@@ -1,2 +1,8 @@
+    <footer>
+        <center>
+            <div>Copyright Hackder $$dna.Date("yyyy")$$</div>
+        </center>
+    </footer>
+
     </body>
 </html>

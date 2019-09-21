@@ -1,0 +1,49 @@
+@import "base";
+
+.word-selection {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: $fontsize-small;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: auto;
+    margin: 10px;
+    max-width: 400px;
+
+
+    /* Hide the browser's default radio button */
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+
+        /* When the radio button is checked, add a blue background */
+        &:checked ~ .radio-body {
+            border: 2px solid $color-theme;
+        }
+    }
+
+    .radio-body {
+        border-radius: 4px;
+        background: $background-color;
+        border: 1px solid $color-highlite-darker;
+        padding: 10px;
+    }
+}
+
+.correct-choice .radio-body {
+    color: $background-color;
+    background-color: $color-success;
+    border: 1px solid $color-highlite-darker;
+}
+
+.wrong-choice .radio-body {
+    color: $background-color;
+    background-color: $color-error;
+    border: 1px solid $color-highlite-darker;
+}
