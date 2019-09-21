@@ -5,27 +5,27 @@
     <h1>WordsQ</h1>
 
     <div class="inner-container">
-        <label class="container">Lection 1
+        <label id="lection1" class="container">Lection 1
             <input type="checkbox" >
             <span class="checkmark"></span>
         </label>
-        <label class="container">Lection 2
+        <label id="lection2" class="container">Lection 2
                 <input type="checkbox" >
                 <span class="checkmark"></span>
         </label>
-        <label class="container">Lection 3
+        <label id="lection3" class="container">Lection 3
                 <input type="checkbox" >
                 <span class="checkmark"></span>
         </label>
-        <label class="container">Lection 4
+        <label id="lection4" class="container">Lection 4
                 <input type="checkbox" >
                 <span class="checkmark"></span>
         </label>
-        <label class="container">Lection 5
+        <label id="lection5" class="container">Lection 5
                 <input type="checkbox" >
                 <span class="checkmark"></span>
         </label>
-        <label class="container">Lection 6
+        <label id="lection6" class="container">Lection 6
                 <input type="checkbox" >
                 <span class="checkmark"></span>
         </label>
