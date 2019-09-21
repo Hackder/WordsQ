@@ -1,7 +1,51 @@
 <!--@ include header @-->
 
 <center>
-        <h1>WordsQ</h1>
+    <!-- Header text -->
+    <h1>WordsQ</h1>
+
+    <div class="inner-container">
+        <label class="container">Lection 1
+            <input type="checkbox" >
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 2
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 3
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 4
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 5
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <label class="container">Lection 6
+                <input type="checkbox" >
+                <span class="checkmark"></span>
+        </label>
+        <div class="secondary-info">(<span id="selected-words-total">240</span> words)</div>
+    </div>
+    <div class="inner-container">
+        <div class="secondary-header">Range</div>
+        <div class="linear-container">
+            <input id="txtFrom" type="number" min="1" max="240" placeholder="From"/>
+            <input id="txtTo" type="number" min="1" max="240" placeholder="To"/>
+        </div>
+    </div>
+    <div class="inner-container">
+        <div class="secondary-header">Type</div>
+        <div class="linear-container">
+            <select>
+                <option value="test">Select from 3</option>
+            </select>
+        </div>
+    </div>
 </center>
 
 <!--@ include footer @-->

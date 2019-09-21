@@ -1,15 +1,51 @@
 
 @import "base";
 
+@import "checkbox";
+
 body {
     color: $primary-color;
     background-color: $background-color;
-    padding: 50, 50, 50, 50;
-    width: 100%;
-    height: 100%;
+    padding: 10px;
 }
 
+// Style the header text (WordsQ)
 .header-text {
     position: relative;
     margin: 50, 20, 50, 20;
+}
+
+// Inner container which is used to organize parts of the website
+.inner-container {
+    position: relative;
+    max-width: 80%;
+    padding: 20px;
+}
+
+// makes the text styled as secondary
+.secondary-info {
+    display: block;
+    color: $color-text-secondary;
+    font-size: $fontsize-small;
+}
+
+input[type=text], input[type=number], select {
+    width: auto;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid $color-highlite-darker;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: $background-color;
+}
+
+input[type=number] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
 }

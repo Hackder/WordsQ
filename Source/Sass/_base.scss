@@ -1,23 +1,28 @@
-$primary-color: black;
-$background-color: white;
 
 // Font sizes
-$fontsize-smallest: 12;
-$fontsize-small: 14;
-$fontsize-regular: 16;
-$fontsize-big: 18;
-$fontsize-huge: 50;
+$fontsize-smallest: 14pt;
+$fontsize-small: 16pt;
+$fontsize-regular: 20pt;
+$fontsize-big: 24pt;
+$fontsize-huge: 28pt;
 
 // Colors
 $color-theme: #3C7A89;
 $color-error: #b3001b;
 $color-success: #8ac926;
 $color-text: black;
+$color-text-secondary: #666;
+$color-text-thridary: #A2A2A2;
+$primary-color: black;
+$background-color: white;
+
+$color-highlite-light: #eee;
+$color-highlite-darker: #ccc;
 
 // QuickSand
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700&display=swap&subset=latin-ext');
 
-html {
+html, body {
     font-family: 'QuickSand', 'sans-serif';
     font-size: $fontsize-regular;
     color: $color-text;
