@@ -1,2 +1,5 @@
 # Ignore all logs
 *.log
+
+# Create your own file
+/WebRoot/Assets/Js/wordsq.lections.js

@@ -28,7 +28,7 @@
         }
     }
 
-    @media (min-width: 1025px) and (max-width: 1280px) {
+    @media (min-width: 1281px) {
         &:hover input ~ .radio-checkmark {
             background-color: $color-highlite-darker;
         }
@@ -48,4 +48,15 @@
         padding: 15px;
         cursor: pointer;
     }
+}
+
+.correct-prefix-choice ~ .radio-checkmark {
+    background-color: $color-success !important;
+    color: $background-color !important;
+}
+
+
+.wrong-prefix-choice ~ .radio-checkmark {
+    background-color: $color-error !important;
+    color: $background-color !important;
 }
