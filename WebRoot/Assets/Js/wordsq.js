@@ -3,6 +3,7 @@ let type = 0;
 let from = -1;
 let to = -1;
 
+// Fired when all of the elements of the page are loaded
 function Loaded() {
     // Add event listeners
     lections.forEach((e,i) => {
@@ -39,12 +40,15 @@ function Loaded() {
             wordChoiceContainer.classList.add("hidden");
         }
         type = typeSelection.selectedIndex;
-        reShowWord();
+        if (type > 0) {
+            reShowWord();
+        }
     });
 
     submitButton.addEventListener("click", submitBtnClicked);
 }
 
+// Checked / Unchecked some lection
 function lectionChecked(event) {
     if (event.target.checked) {
         totalWordCount += allLections[
@@ -68,6 +72,7 @@ let isNext = false;
 
 let question, prefix, answer;
 
+// Resets the quiz if some setting changes
 function refreshQuiz() {
     if (totalWordCount < 1 || from < 0 || to < 0) {
         submitButton.disabled = true;
@@ -90,9 +95,10 @@ function refreshQuiz() {
     nextWord(words[0]);
 }
 
+// Disables all of the inputs
 function disableAll() {
     txtInput.disabled = true;
-    wordChoice.forEach((e,i) => {
+    wordChoices.forEach((e,i) => {
         e.disabled = true;
     });
     for (let prop in prefixes) {
@@ -103,6 +109,7 @@ function disableAll() {
 }
 
 function submitBtnClicked() {
+    // if next jump to the next word
     if (isNext) {
         progress += 1;
         isNext = false;
@@ -122,6 +129,7 @@ function submitBtnClicked() {
 
     disableAll();
 
+    // Check the prefix
     prefixes[prefix].classList.add("correct-prefix-choice");
     if (prefixes[prefix].checked == false) {
         for (let prop in prefixes) {
@@ -133,6 +141,7 @@ function submitBtnClicked() {
         }
     }
 
+    // Check for type 0 (filling the word manually)
     if (type == 0) {
         if (txtInput.value == answer) {
             txtInput.classList.add("correct-input");
@@ -142,8 +151,15 @@ function submitBtnClicked() {
             txtWrongWord.textContent = answer;
         }
     }
-
-    
+    else if (type == 1) {
+        wordChoices.forEach((e,i) => {
+            if (wordChoiceTxts[i].textContent == answer) {
+                wordChoiceObjects[i].classList.add("correct-choice");
+            } else if (e.checked) {
+                wordChoiceObjects[i].classList.add("wrong-choice");
+            }
+        });
+    }
 }
 
 function nextWord(raw_word) {
@@ -153,9 +169,11 @@ function nextWord(raw_word) {
     txtInput.classList.remove("correct-input");
     txtInput.classList.remove("wrong-input");
     txtInput.value = "";
-    wordChoice.forEach((e,i) => {
+    wordChoices.forEach((e,i) => {
         e.disabled = false;
         e.checked = false;
+        wordChoiceObjects[i].classList.remove("correct-choice");
+        wordChoiceObjects[i].classList.remove("wrong-choice");
     });
     for (let prop in prefixes) {
         if (Object.prototype.hasOwnProperty.call(prefixes, prop)) {

@@ -7,7 +7,7 @@ let prefixes = null;
 let txtProgress = null;
 let txtQuestion = null;
 let txtInput, txtInputContainer, txtWrongWord = null;
-let wordChoice = [], wordChoiceObjects = [], wordChoiceTxts = [];
+let wordChoices = [], wordChoiceObjects = [], wordChoiceTxts = [];
 let wordChoiceContainer = null;
 let submitButton = null;
 
@@ -61,7 +61,7 @@ function OnLoad() {
     for (let i = 0; i < 3; i++) {
         let element = document.getElementById("word" + (i+1));
         let content = element.children[0];
-        wordChoice.push(content);
+        wordChoices.push(content);
         wordChoiceObjects.push(element);
         wordChoiceTxts.push(element.children[1]);
     }
