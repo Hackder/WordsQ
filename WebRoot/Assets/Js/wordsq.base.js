@@ -10,6 +10,7 @@ let txtInput, txtInputContainer, txtWrongWord = null;
 let wordChoices = [], wordChoiceObjects = [], wordChoiceTxts = [];
 let wordChoiceContainer = null;
 let submitButton = null;
+let txtRate = null;
 
 function randItem(arr) {
     return arr[Math.floor(Math.random()*arr.length)];
@@ -69,6 +70,8 @@ function OnLoad() {
     wordChoiceContainer = document.getElementById("wordChoiceContainer");
 
     submitButton = document.getElementById("submitButton");
+
+    txtRate = document.getElementById("txtRate");
 }
 
 function shuffle(a) {

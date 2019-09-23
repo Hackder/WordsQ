@@ -1,7 +1,20 @@
+const modifications = [
+    "a,e",
+    "a,e",
+    "u,o",
+    "s,z",
+    "z,s",
+    "d,b",
+    "b,d"
+];
+
 let totalWordCount = 0;
 let type = 0;
 let from = -1;
 let to = -1;
+
+// Array contining 1 or 0 to determite if you answered correctly or not
+let rate = [];
 
 // Fired when all of the elements of the page are loaded
 function Loaded() {
@@ -69,6 +82,7 @@ function lectionChecked(event) {
 let words = []
 let progress = 1;
 let isNext = false;
+let isRestart = false;
 
 let question, prefix, answer;
 
@@ -86,7 +100,11 @@ function refreshQuiz() {
         }
     });
     progress = 1;
+    rate = [];
+    updateRate();
     submitButton.disabled = false;
+    submitButton.value = "Check";
+    submitButton.classList.remove("submit-button-red");
     words = allWords.slice(from-1, to);
     words = shuffle(words);
     txtProgress.textContent = progress + "/" + words.length;
@@ -109,14 +127,22 @@ function disableAll() {
 }
 
 function submitBtnClicked() {
+    if (isRestart) {
+        refreshQuiz();
+        isRestart = false;
+        isNext = false;
+        return;
+    }
     // if next jump to the next word
     if (isNext) {
         progress += 1;
         isNext = false;
         submitButton.value = "Check";
+        submitButton.classList.remove("submit-button-red");
         if (progress > words.length) {
             disableAll();
-            submitButton.disabled = true;
+            submitButton.value = "Restart";
+            isRestart = true;
             return;
         }
         txtProgress.textContent = progress + "/" + words.length;
@@ -129,9 +155,11 @@ function submitBtnClicked() {
 
     disableAll();
 
+    let incorrect = false;
     // Check the prefix
     prefixes[prefix].classList.add("correct-prefix-choice");
     if (prefixes[prefix].checked == false) {
+        incorrect = true;
         for (let prop in prefixes) {
             if (Object.prototype.hasOwnProperty.call(prefixes, prop)) {
                 if (prefixes[prop].checked) {
@@ -149,6 +177,7 @@ function submitBtnClicked() {
             txtInput.classList.add("wrong-input");
             txtWrongWord.classList.add("shown");
             txtWrongWord.textContent = answer;
+            incorrect = true;
         }
     }
     else if (type == 1) {
@@ -157,9 +186,16 @@ function submitBtnClicked() {
                 wordChoiceObjects[i].classList.add("correct-choice");
             } else if (e.checked) {
                 wordChoiceObjects[i].classList.add("wrong-choice");
+                incorrect = true;
             }
         });
     }
+
+    rate.push(incorrect ? 0 : 1);
+
+    if (incorrect) submitButton.classList.add("submit-button-red");
+
+    updateRate();
 }
 
 function nextWord(raw_word) {
@@ -219,4 +255,17 @@ function reShowWord() {
     for (let i = 0; i < 3; i++) {
         wordChoiceTxts[i].textContent = options[i];
     }
+}
+
+function updateRate() {
+    let correct = 0;
+    rate.forEach((e,i) => {
+        if (e == 1) {
+            correct++;
+        }
+    });
+
+    let percentage = Math.round((correct / (rate.length)) * 10000) / 100;
+    if (rate.length < 1) percentage = 0;
+    txtRate.textContent = percentage.toString() + "%";
 }

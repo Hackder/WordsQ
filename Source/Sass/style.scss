@@ -142,3 +142,13 @@ input {
     visibility: collapse;
     display: none;
 }
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.submit-button-red {
+    background-color: $color-error !important;
+}
