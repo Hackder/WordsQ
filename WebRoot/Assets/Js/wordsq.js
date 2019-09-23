@@ -214,11 +214,11 @@ function nextWord(raw_word) {
     for (let prop in prefixes) {
         if (Object.prototype.hasOwnProperty.call(prefixes, prop)) {
             prefixes[prop].disabled = false;
-            prefixes[prop].checked = false;
             prefixes[prop].classList.remove("wrong-prefix-choice");
             prefixes[prop].classList.remove("correct-prefix-choice");
         }
     }
+    prefixes.None.checked = true;
 
     let parts = raw_word.split("$");
     question = parts[0];

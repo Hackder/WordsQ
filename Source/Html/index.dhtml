@@ -44,7 +44,7 @@
             <select id="typeSelection">
                 <option value="write">Write the word</option>
                 <option value="from3words">Select from 3 words</option>
-                <option value="from3modified">Select from 3 similar</option>
+                <!-- <option value="from3modified">Select from 3 similar</option> -->
             </select>
         </div>
     </div>
@@ -83,7 +83,7 @@
                 </label>
                 
                 <label class="radio-container">
-                    <input id="prefixNone" type="radio" name="prefix">
+                    <input id="prefixNone" type="radio" name="prefix" checked="checked">
                     <div class="radio-checkmark">
                         <span>None</span>
                     </div>
