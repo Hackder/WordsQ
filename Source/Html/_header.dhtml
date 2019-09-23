@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>WordsQ</title>
-        <link href="/Assets/Css/style.css" rel="stylesheet" type="text/css" />
-        <script src="/Assets/Js/wordsq.lections.js" type="text/javascript"></script>
-        <script src="/Assets/Js/wordsq.base.js" type="text/javascript"></script>
-        <script src="/Assets/Js/wordsq.js" type="text/javascript"></script>
+        <link href="Assets/Css/style.css" rel="stylesheet" type="text/css" />
+        <script src="Assets/Js/wordsq.lections.js" type="text/javascript"></script>
+        <script src="Assets/Js/wordsq.base.js" type="text/javascript"></script>
+        <script src="Assets/Js/wordsq.js" type="text/javascript"></script>
     </head>
     <body onload="OnLoad();Loaded();">
