@@ -184,6 +184,7 @@ function submitBtnClicked() {
         wordChoices.forEach((e,i) => {
             if (wordChoiceTxts[i].textContent == answer) {
                 wordChoiceObjects[i].classList.add("correct-choice");
+                if (e.checked == false) incorrect = true;
             } else if (e.checked) {
                 wordChoiceObjects[i].classList.add("wrong-choice");
                 incorrect = true;
