@@ -1,5 +1,6 @@
 
 let lections = [];
+let additions = [];
 let selectedWordsTxt = null;
 let txtFrom, txtTo = null;
 let typeSelection = null;
@@ -22,9 +23,14 @@ Number.prototype.clamp = function(min, max) {
 
 function OnLoad() {
     // Load lections
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < allLections.length; i++) {
         let chBox = document.getElementById("lection" + (i+1));
         lections.push(chBox);
+    }
+    // Load additions
+    for (let i = 0; i < allAdditions.length; i++) {
+        let chBox = document.getElementById("addition" + (i+1));
+        additions.push(chBox);
     }
 
     // Add span that displays the total amount of words

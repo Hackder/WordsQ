@@ -22,6 +22,9 @@ function Loaded() {
     lections.forEach((e,i) => {
         e.addEventListener("change", lectionChecked);
     });
+    additions.forEach((e,i) => {
+        e.addEventListener("change", lectionChecked);
+    });
 
     // Clamp range values
     txtFrom.addEventListener("change", () => {
@@ -64,12 +67,16 @@ function Loaded() {
 // Checked / Unchecked some lection
 function lectionChecked(event) {
     if (event.target.checked) {
-        totalWordCount += allLections[
+        totalWordCount += event.target.id.includes("lection") ? allLections[
             parseInt(event.target.id.replace("lection", "")) -1
+        ].length : allAdditions[
+            parseInt(event.target.id.replace("addition", "")) -1
         ].length;
     } else {
-        totalWordCount -= allLections[
+        totalWordCount -= event.target.id.includes("lection") ? allLections[
             parseInt(event.target.id.replace("lection", "")) -1
+        ].length : allAdditions[
+            parseInt(event.target.id.replace("addition", "")) -1
         ].length;
     }
     selectedWordsTxt.textContent = totalWordCount;
@@ -97,6 +104,11 @@ function refreshQuiz() {
     lections.forEach((e,i) => {
         if (e.checked == true) {
             allWords = allWords.concat(allLections[i]);
+        }
+    });
+    additions.forEach((e,i) => {
+        if (e.checked == true) {
+            allWords = allWords.concat(allAdditions[i]);
         }
     });
     progress = 1;
