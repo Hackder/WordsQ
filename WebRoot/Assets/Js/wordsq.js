@@ -1,19 +1,13 @@
-const modifications = [
-    "a,e",
-    "a,e",
-    "u,o",
-    "s,z",
-    "z,s",
-    "d,b",
-    "b,d"
-];
+/*
+    Main logic of the website
+*/
 
 let totalWordCount = 0;
 let type = 0;
 let from = -1;
 let to = -1;
 
-// Array contining 1 or 0 to determite if you answered correctly or not
+// Array containing 1 or 0 to determite if you answered correctly or not
 let rate = [];
 
 // Fired when all of the elements of the page are loaded

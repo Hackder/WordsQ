@@ -1,3 +1,7 @@
+/*
+    Contains global generic scripts and references all used html elements, for easier acces
+*/
+
 
 let lections = [];
 let additions = [];
